@@ -57,9 +57,10 @@ function calculateBMI(){
         }
         
     }else{
-        alert ("Please fill in all fields.")
-    }
+    alert('isi dulu');
+    $('#triggerModal').removeAttr('data-toggle')}
 };
+/*
 $('#buttonCalc').on('click', function(){
   $('input').attr('readonly', true);
   $('#means').fadeIn("slow");
@@ -68,7 +69,7 @@ $('#resets').on('click',function()
   {
     $('#means, #IMTscore').html("N/A");
     $('input').removeAttr('readonly');
-  });
+  });*/
 $('#resets').on('click',function(){ $('#means, #IMTscore').removeClass("text-muted text-info text-danger text-warning text-primary text-success");});
 
 $(document).ready(function(){
