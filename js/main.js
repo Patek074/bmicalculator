@@ -9,6 +9,7 @@ function calculateBMI(){
         var IMTdec = IMTHasil.toFixed(2)
  //IMT Calculation result       
         document.getElementById("IMTscore").innerHTML=IMTdec ;
+        ('#triggerModal').attr('data-toggle', "modal");
         
         
 //$('#IMTscore').fadeIn(function(){$('#IMTscore').value('IMTdec').animate({'opacity':1}, 400);});        
