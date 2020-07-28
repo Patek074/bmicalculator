@@ -72,6 +72,7 @@ $('#resets').on('click',function()
 $('#resets').on('click',function(){ $('#means, #IMTscore').removeClass("text-muted text-info text-danger text-warning text-primary text-success");});
 
 $(document).ready(function(){
+  $('button').prop('disabled', false)
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
 
@@ -94,17 +95,6 @@ $(document).ready(function(){
       });
     } // End if
   });
-
-$(function () {
-        $("input[name='chkPassPort']").click(function () {
-            if ($("#chkYes").is(":checked")) {
-                $("#txtPassportNumber").removeAttr("disabled");
-                $("#txtPassportNumber").focus();
-            } else {
-                $("#txtPassportNumber").attr("disabled", "disabled");
-            }
-        });
-    });
 
 //BMI Script
 
