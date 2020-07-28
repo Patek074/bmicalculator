@@ -1,4 +1,11 @@
-new WOW().init();
+$(window).on('load', function(){
+  console.log("loaded");
+  $('#btnReset, #btnWoke').on('click',function(){ $('#means, #IMTscore').removeClass("text-muted text-info text-danger text-warning text-primary text-success");});
+$('#btnReset').on('click', function(){
+    $('#kalkulator').trigger('reset');;
+  });
+});
+
 function calculateBMI(){
     var weight = document.IMTcalc.weight.value;
     var height = document.IMTcalc.height.value*0.01;
@@ -9,113 +16,85 @@ function calculateBMI(){
         var IMTHasil = (weight/(height*height));
         var IMTdec = IMTHasil.toFixed(2)
  //IMT Calculation result       
-        document.getElementById("IMTscore").innerHTML=IMTdec ;
+        document.getElementById("IMTscore").innerHTML=IMTdec;
         $('#triggerModal').attr('data-toggle', "modal");
-        
-        
-//$('#IMTscore').fadeIn(function(){$('#IMTscore').value('IMTdec').animate({'opacity':1}, 400);});        
-//Styling Result
-        /*if(IMTHasil > 0 && IMTHasil < 18.5){
-          $('#IMTscore').addClass('text-info');
-        }
-        if(IMTHasil > 18.5 && IMTHasil < 25){
-          $('#IMTscore').addClass('text-success');
-        }
-        if(IMTHasil > 25 && IMTHasil < 30){
-          $('#IMTscore').addClass('text-primary');
-        }
-        if(IMTHasil > 30 && IMTHasil < 35){
-          $('#IMTscore').addClass('text-warning');
-        }
-        if(IMTHasil > 35){
-          $('#IMTscore').addClass('text-danger');
-        }*/
 
 if(document.getElementById('IMTmen').checked){
   //Result message        
-        if(IMTHasil < 18.5){
-            document.getElementById("means").innerHTML="Kurus" ;
+        if(IMTHasil > 0 && IMTHasil < 17){
+            document.getElementById('means').innerHTML="Kekurangan berat badan tingkat berat" ;
             $('#means, #IMTHasil').addClass('text-info');
+            document.getElementById('genders').innerHTML="Ambang batas kekurangan berat badan tingkat berat untuk pria berada pada kisaran kurang dari 17";
 
         }
         
-        if(IMTHasil > 18.5 && IMTHasil < 25){
-            document.getElementById("means").innerHTML="Ideal";
-            $('#means, #IMTscore').addClass('text-success');
-        }
-        
-        if(IMTHasil > 25 && IMTHasil < 30){
-            document.getElementById("means").innerHTML="Gemuk";
+        if(IMTHasil > 17 && IMTHasil < 18.4){
+            document.getElementById("means").innerHTML="Kekurangan berat badan tingkat ringan.";
             $('#means, #IMTscore').addClass('text-primary');
+            document.getElementById('genders').innerHTML="Ambang batas kekurangan berat badan ringan untuk pria berada pada kisaran 17-18.4.";
         }
         
-        if(IMTHasil > 30 && IMTHasil < 35){
-            document.getElementById("means").innerHTML="Cenderung obesitas" ;
+        if(IMTHasil > 18.5 && IMTHasil < 25){
+            document.getElementById("means").innerHTML="Berat badan normal";
+            $('#means, #IMTscore').addClass('text-success');
+            document.getElementById('genders').innerHTML="Ambang batas berat badan normal untuk pria berada pada kisaran 18.5-25.";
+        }
+        
+        if(IMTHasil > 25.1 && IMTHasil < 27){
+            document.getElementById("means").innerHTML="Kelebihan berat badan tingkat ringan." ;
             $('#means, #IMTscore').addClass('text-warning');
+            document.getElementById('genders').innerHTML="Ambang batas kelebihan berat badan untuk pria berada pada kisaran 25.1-27.";
         }
         
-        if(IMTHasil > 35){
-            document.getElementById("means").innerHTML="Obesitas" ;
+        if(IMTHasil > 27){
+            document.getElementById("means").innerHTML="Kelebihan berat badan tingkat berat" ;
             $('#means, #IMTscore').addClass('text-danger');
+            document.getElementById('genders').innerHTML="Ambang batas kelebihan berat badan tingkat berat untuk pria berada pada kisaran lebih dari 27.";
         }
-  
-  document.getElementById('genders').innerHTML="lakik";
 }
 else if(
 document.getElementById('IMTwomen').checked){
   
-  //Result message        
-        if(IMTHasil < 20.5){
-            document.getElementById("means").innerHTML="Kurus" ;
-            $('#means, #IMTscore').addClass('text-info');
-
+ if(IMTHasil > 0 && IMTHasil < 17){
+            document.getElementById("means").innerHTML="Kekurangan berat badan tingkat berat" ;
+            $('#means, #IMTHasil').addClass('text-info');
+            document.getElementById('genders').innerHTML="Ambang batas kekurangan berat badan tingkat berat untuk wanita berada pada kisaran kurang dari 17";
         }
         
-        if(IMTHasil > 20.5 && IMTHasil < 25.5){
-            document.getElementById("means").innerHTML="Ideal";
-            $('#means, #IMTscore').addClass('text-success');
-        }
-        
-        if(IMTHasil > 25.5 && IMTHasil < 30.5){
-            document.getElementById("means").innerHTML="Gemuk";
+        if(IMTHasil > 17 && IMTHasil < 18.4){
+            document.getElementById("means").innerHTML="Kekurangan berat badan tingkat ringan.";
             $('#means, #IMTscore').addClass('text-primary');
+            document.getElementById('genders').innerHTML="Ambang batas kekurangan berat badan ringan untuk pria berada pada kisaran 17-18.4.";
         }
         
-        if(IMTHasil > 30.5 && IMTHasil < 35.5){
-            document.getElementById("means").innerHTML="Cenderung obesitas" ;
+        if(IMTHasil > 18.5 && IMTHasil < 25){
+            document.getElementById("means").innerHTML="Berat badan normal";
+            $('#means, #IMTscore').addClass('text-success');
+            document.getElementById('genders').innerHTML="Ambang batas berat badan normal untuk wanita berada pada kisaran 18.5-25.";
+        }
+        
+        if(IMTHasil > 25.1 && IMTHasil < 27){
+            document.getElementById("means").innerHTML="Kelebihan berat badan tingkat ringan." ;
             $('#means, #IMTscore').addClass('text-warning');
+            document.getElementById('genders').innerHTML="Ambang batas kelebihan berat badan untuk wanita berada pada kisaran 25.1-27.";
         }
         
-        if(IMTHasil > 35.5){
-            document.getElementById("means").innerHTML="Obesitas" ;
+        if(IMTHasil > 27){
+            document.getElementById("means").innerHTML="Kelebihan berat badan tingkat berat" ;
             $('#means, #IMTscore').addClass('text-danger');
+            document.getElementById('genders').innerHTML="Ambang batas kelebihan berat badan tingkat berat untuk pria berada pada kisaran lebih dari 27.";
         }
-  document.getElementById('genders').innerHTML="wanitak";
 }
 
         
     }else{
-    alert('isi dulu');
+    alert('Pilih jenis kelamin, masukkan berat dan tinggi badan, kemudian tekan Hitung IMT');
     $('#triggerModal').removeAttr('data-toggle')}
 };
-/*
-$('#buttonCalc').on('click', function(){
-  $('input').attr('readonly', true);
-  $('#means').fadeIn("slow");
-});
-$('#resets').on('click',function()
-  {
-    $('#means, #IMTscore').html("N/A");
-    $('input').removeAttr('readonly');
-  });*/
-$('#btnReset, #btnWoke').on('click',function(){ $('#means, #IMTscore').removeClass("text-muted text-info text-danger text-warning text-primary text-success");});
 
 $(document).ready(function(){
-  
+  console.log('ready');
 //Add reset button behavior on modal
-    $('#btnReset').on('click', function(){
-    $('#kalkulator').trigger('reset');;
-  });
 //enable button after page loads.
   $('button').prop('disabled', false)
 // Add smooth scrolling to all links
