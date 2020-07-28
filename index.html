@@ -22,18 +22,22 @@
     	    
     <!--popper js-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <!--WOW Animation-->
+    <script src="js/wow.min.js"></script>
+    <script> new WOW().init(); </script>
+    
     
     <!--@bootstrapCss-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
-    <!--WOW Animation-->
-    <script src="js/wow.min.js"></script>
-    <script> new WOW().init(); </script>
     
     <!--custom css-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/hover.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
 
 </head>
 <body>
@@ -67,7 +71,7 @@
         
         <div class="container h-100 align-items-center">
             <div class="pt-3 mb-3">
-                <h4 class="text-center display-4">Kalkulator Indeks Masa Tubuh</h4>
+                <h3 class="text-center display-4">Kalkulator Indeks Masa Tubuh</h3>
                   <form name="IMTcalc" id="kalkulator" class="mt-3">
    <div class=" mt-3">
      <h6>Jenis kelamin Anda:</h6>
@@ -103,12 +107,12 @@
                       </div>
                       </div>
                       <small id="TinggiHelp" class="form-text text-muted">Satuan tinggi badan dalam centimeter(cm). memasukkan angka dalam satuan lain akan mengurangi keakuratan data.</small>
-                  </div>    
+                  </div>  
                       <div class="mt-3 mb-3 text-center">
-                      <button id="triggerModal" type="button" href="#kalkulator" onClick="calculateBMI()" data-target="#hslModal" class="m-2
-                      col-md-4 btn btn-outline-primary btn-lg btn-lg hvr-bounce-to-bottom" disabled>
+                      <button id="triggerModal" type="button" href="#kalkulator" onClick="calculateBMI()" data-target="#hslModal" data-wow-delay="2s" data-wow-duration="3s" class="m-2
+                      col-md-4 btn btn-outline-primary btn-lg btn-lg hvr-bounce-to-bottom">
                         Hitung IMT Anda
-                      </button>
+                      </button></form>
                       <!--button id="resets" class="m-2 col-md-4 btn btn-outline-dark" type="reset" value="reset">Reset</button-->
                       </div>
                       <!--div>
@@ -125,7 +129,7 @@
                     </div-->
 <!-- Modal -->
 <div class="modal fade" id="hslModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
+<div class="modal-dialog modal-dialog-centered" role="document">
 <div class="modal-content">
 <div class="modal-header">
 <h5 class="modal-title" id="exampleModalLabel">Hasil</h5>
@@ -133,19 +137,13 @@
 <div class="modal-body">
   <div class="text-center">
   <h6>Nilai IMT Anda</h6>
-<p id="IMTscore" class="display-4"></p></div>
-<div class="text-center"
+<p id="IMTscore" class="display-2"></p></div>
+<div class="text-center">
   <h6>Artinya, tubuh Anda :</h6>
-<p id="means" class="display-4"></p>
+<p id="means" class="display-2 wow backInUp" data-wow-delay="0.7" data-wow-duration="0.5s"></p>
 </div>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
-<button id="btnReset" type="reset" value="reset" class="btn btn-secondary" data-dismiss="modal">Reset</button>
-</div> </div> </div> </div>
-                  </form>
-                  
-                  <div class="progress progress-bar-lg">
+<p id="genders">aww</p>
+<div class="progress progress-bar-lg">
   <div class="progress-bar bg-info" style="width:15%">
     Kurus
   </div>
@@ -160,6 +158,17 @@
     Obesitas
   </div>
 </div>
+</div>
+<div class="modal-footer">
+<button id="btnWoke" type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
+<button id="btnReset" type="reset" value="reset" class="btn btn-secondary" data-dismiss="modal">Reset</button>
+                
+</div>
+</div>
+</div>
+</div>
+                  
+    
 
             </div>
         </div>
