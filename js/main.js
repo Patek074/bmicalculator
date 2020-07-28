@@ -76,8 +76,6 @@ $('#resets').on('click',function()
 $(document).ready(function(){
  
 //Add reset button behavior on modal
-  $('#btnReset').on('click', function(){
-  $('#kalkulator').trigger('reset');});
     
 //enable button after page loads.
   $('button').prop('disabled', false)
