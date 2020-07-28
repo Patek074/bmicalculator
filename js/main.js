@@ -78,8 +78,8 @@ $(document).ready(function(){
 //Add reset button behavior on modal
     
 //enable button after page loads.
-  $('button').prop('disabled', false)
-  // Add smooth scrolling to all links
+  $('button').prop('disabled', false);
+// Add smooth scrolling to all links
   $("a").on('click', function(event) {
 
     // Make sure this.hash has a value before overriding default behavior
