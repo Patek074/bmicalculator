@@ -71,9 +71,16 @@ $('#resets').on('click',function()
     $('#means, #IMTscore').html("N/A");
     $('input').removeAttr('readonly');
   });*/
-$('#resets').on('click',function(){ $('#means, #IMTscore').removeClass("text-muted text-info text-danger text-warning text-primary text-success");});
+//$('#resets').on('click',function(){ $('#means, #IMTscore').removeClass("text-muted text-info text-danger text-warning text-primary text-success");});
 
 $(document).ready(function(){
+ 
+//Add reset button behavior on modal
+  $('#btnReset').on('click', function(){
+  $('#kalkulator').trigger('reset');
+    console.log($('#resets'));
+    
+//enable button after page loads.
   $('button').prop('disabled', false)
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
