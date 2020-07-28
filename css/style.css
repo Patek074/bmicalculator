@@ -10,6 +10,43 @@
     height: 100vh;
 }
 
-html, body, {
-height: 100vh;
+.display-2{
+  letter-spacing: -3px;
+}
+
+#satuan{
+  line-height: -3px;
+}
+
+.slide {
+  width: 100%;
+  animation-name: slides;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes slides{
+  0% {width: 0%;}
+  20% {width: 20%;}
+  40% {width: 65%;}
+  60% {width: 80%;}
+  80% {width: 98%;}
+  100% {width: 100%;}
+}
+
+input, button {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
