@@ -1,3 +1,6 @@
+setTimeout(function() {
+    $('#termsModal').modal('show');
+}, 2350);
 $(window).on('load', function(){
   console.log("loaded");
   $('#btnReset, #btnWoke').on('click',function(){ $('#means, #IMTscore').removeClass("text-muted text-info text-danger text-warning text-primary text-success");});
@@ -20,6 +23,7 @@ function calculateBMI(){
         $('#triggerModal').attr('data-toggle', "modal");
 
 if(document.getElementById('IMTmen').checked){
+  document.getElementById('genderTitle').innerHTML="(pria)";
   //Result message        
         if(IMTHasil > 0 && IMTHasil < 17){
             document.getElementById('means').innerHTML="Kekurangan berat badan tingkat berat" ;
@@ -54,7 +58,7 @@ if(document.getElementById('IMTmen').checked){
 }
 else if(
 document.getElementById('IMTwomen').checked){
-  
+  document.getElementById('genderTitle').innerHTML="(wanita)";
  if(IMTHasil > 0 && IMTHasil < 17){
             document.getElementById("means").innerHTML="Kekurangan berat badan tingkat berat" ;
             $('#means, #IMTHasil').addClass('text-info');
@@ -64,7 +68,7 @@ document.getElementById('IMTwomen').checked){
         if(IMTHasil > 17 && IMTHasil < 18.4){
             document.getElementById("means").innerHTML="Kekurangan berat badan tingkat ringan.";
             $('#means, #IMTscore').addClass('text-primary');
-            document.getElementById('genders').innerHTML="Ambang batas kekurangan berat badan ringan untuk pria berada pada kisaran 17-18.4.";
+            document.getElementById('genders').innerHTML="Ambang batas kekurangan berat badan ringan untuk wanita berada pada kisaran 17-18.4.";
         }
         
         if(IMTHasil > 18.5 && IMTHasil < 25){
@@ -82,8 +86,13 @@ document.getElementById('IMTwomen').checked){
         if(IMTHasil > 27){
             document.getElementById("means").innerHTML="Kelebihan berat badan tingkat berat" ;
             $('#means, #IMTscore').addClass('text-danger');
-            document.getElementById('genders').innerHTML="Ambang batas kelebihan berat badan tingkat berat untuk pria berada pada kisaran lebih dari 27.";
+            document.getElementById('genders').innerHTML="Ambang batas kelebihan berat badan tingkat berat untuk wanita berada pada kisaran lebih dari 27.";
         }
+}
+
+else{
+  alert('Pilih jenis kelamin Anda');
+  $('#triggerModal').removeAttr('data-toggle')
 }
 
         
