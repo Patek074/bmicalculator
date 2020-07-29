@@ -99,7 +99,7 @@
                         <span class="input-group-text">kg</span>
                       </div>
                       </div>
-                      <small id="BeratHelp" class="form-text text-muted">Satuan berat badan dalam kilogram(kg), memasukkan angka dalam satuan lain akan mengurangi keakuratan hasil.</small>          </div>
+                      <small id="BeratHelp" class="form-text">Satuan berat badan dalam kilogram(kg), memasukkan angka dalam satuan lain akan mengurangi keakuratan hasil.</small>          </div>
                       
                   <div class="form-group"> 
                       <label><h6>Tinggi badan Anda:</h6></label>
@@ -109,33 +109,23 @@
                         <span class="input-group-text">cm</span>
                       </div>
                       </div>
-                      <small id="TinggiHelp" class="form-text text-muted">Satuan tinggi badan dalam centimeter(cm). memasukkan angka dalam satuan lain akan mengurangi keakuratan data.</small>
+                      <small id="TinggiHelp" class="form-text">Satuan tinggi badan dalam centimeter(cm). memasukkan angka dalam satuan lain akan mengurangi keakuratan data.</small>
                   </div>  
                       <div class="mt-3 mb-3 text-center">
-                      <button id="triggerModal" type="button" href="#kalkulator" onClick="calculateBMI()" data-target="#hslModal" data-wow-delay="2s" data-wow-duration="3s" class="m-2
-                      col-md-4 btn btn-outline-primary hvr-bounce-to-bottom">
+                      <button id="triggerModal" type="button" href="#kalkulator" onClick="calculateBMI()" data-target="#hslModal" data-wow-delay="2s" data-wow-duration="3s" class="col-sm-4 btn btn-primary hvr-bounce-to-bottom">
                         Hitung IMT
-                      </button></form>
-                      <!--button id="resets" class="m-2 col-md-4 btn btn-outline-dark" type="reset" value="reset">Reset</button-->
-                      </div>
-                      <!--div>
-                      <h6>
-                        Nilai IMT Anda :
-                      </h6>
-                      <div class="text-center">
-                      <h3 id="IMTscore" class="display-4">N/A</h3></div>
-                      <h6>
-                        Artinya, tubuh Anda :
-                      </h6>
-                      <div class="text-center">
-                      <h3 id="means" class="display-4">N/A</h3></div>
-                    </div-->
-<!-- Modal -->
+                      </button>
+                      <button id="resets" class="col-sm-4 btn btn-light" type="reset" value="reset">Reset</button>
+                      <button type="button" id="btnTerms" class="col-sm-4 btn btn-info" data-toggle="modal" data-target="#termsModal">Ketentuan</button>
+                  </form>
+                  </div>
+
+<!-- Result Modal -->
 <div class="modal fade" id="hslModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered" role="document">
 <div class="modal-content">
 <div class="modal-header">
-<h5 class="modal-title" id="exampleModalLabel">Hasil</h5>
+<h5 class="modal-title" id="exampleModalLabel">Hasil<span class="lead" id="genderTitle"></span></h5>
 </button> </div>
 <div class="modal-body">
   <div class="text-center">
@@ -156,12 +146,49 @@
 <div class="modal-footer">
 <button id="btnWoke" type="button" class="btn btn-primary" data-dismiss="modal">Oke</button>
 <button id="btnReset" type="reset" value="reset" class="btn btn-secondary" data-dismiss="modal">Reset</button>
-                
+</div>                
 </div>
 </div>
 </div>
-                  
-    
+
+<!--Terms Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLong" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Disclaimer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <dl>
+          <dt>Rumus</dt>
+          <dd class="wow fadeIn" data-wow-duration="0.8s"data-wow-delay="0.5s">Rumus dan kriteria yang digunakan untuk menghitung indeks massa tubuh diambil dari
+          <a href="https://hellosehat.com/hidup-sehat/fakta-unik/apa-itu-indeks-massa-tubuh-adalah/#gref"class="inline" style="max-width: 100px">https://hellosehat.com/hidup-sehat/fakta-unik/apa-itu-indeks-massa-tubuh-adalah/#gref</a> dan <a href="http://p2ptm.kemkes.go.id/uploads//TmQwU05BQS9YYlJpanB5VnNtRldFUT09/11_Juni__05.png" class="inline">http://p2ptm.kemkes.go.id/uploads//TmQwU05BQS9YYlJpanB5VnNtRldFUT09/11_Juni__05.png</a></dd>
+          <dt>Penggunaan</dt>
+          <dd class="wow fadeIn" data-wow-duration="0.8s"data-wow-delay="0.8s">Berdasarkan artikel <a href="https://hellosehat.com/hidup-sehat/fakta-unik/apa-itu-indeks-massa-tubuh-adalah/#gref" class="inline" style="max-width: 100px">https://hellosehat.com/hidup-sehat/fakta-unik/apa-itu-indeks-massa-tubuh-adalah/#gref</a> dan <a href="https://www.alodokter.com/pemahaman-seputar-indeks-massa-tubuh" class="inline">https://www.alodokter.com/pemahaman-seputar-indeks-massa-tubuh</a>, bahwa hasil perhitungan indeks massa tubuh tidak bisa seutuhnya dijadikan patokan medis, sebab ada banyak faktor yang memengaruhi keakuratan data. <mark>Dijelaskan juga, bahwa kriteria dan penghitungan nilai indeks massa tubuh antara orang dewasa dan anak-anak berbeda.</mark></dd>
+          <dt>Pengumpulan data</dt>
+          <dd class="wow fadeIn" data-wow-duration="0.8s"data-wow-delay="1.1s">Laman ini tidak mengumpulkan data yang telah anda masukkan atau hasil yang anda peroleh dari perhitungan.</dd>
+          <dt>Library, plugin, hosting dan lain-lain</dt>
+          <dd class="wow fadeIn" data-wow-duration="0.8s"data-wow-delay="0.5s">
+            <ol>
+              <li>Bootstrap Twiter <a href="https://getbootstrap.com">https://getbootstrap.com</a></li>
+              <li>Jquery <a href="https://jquery.com">https://jquery.com</a></li>
+              <li>Github <a href="https://github.com">https://github.com</a></li>
+              <li>aimate.css <a href="https://animate.style">https://animate.style</a></li>
+              <li>wow.js<a href="https://wowjs.uk">https://wowjs.uk</a></li>
+            </ol>
+          </dd>
+        </dl>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Saya mengerti dan setuju.</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
             </div>
         </div>
