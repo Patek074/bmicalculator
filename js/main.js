@@ -1,3 +1,6 @@
+setTimeout(function() {
+    $('#termsModal').modal('show');
+}, 2350);
 $(window).on('load', function(){
   console.log("loaded");
   $('#btnReset, #btnWoke').on('click',function(){ $('#means, #IMTscore').removeClass("text-muted text-info text-danger text-warning text-primary text-success");});
