@@ -27,10 +27,12 @@ body {
   100%{background-position:0% 64%}
 }
 
-
-
 .space {
     line-height: 0.8em;
+}
+
+small {
+  color: #a6a6a6; !important
 }
 
 .kerning {
