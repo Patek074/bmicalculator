@@ -23,7 +23,7 @@ function calculateBMI(){
         $('#triggerModal').attr('data-toggle', "modal");
 
 if(document.getElementById('IMTmen').checked){
-  document.getElementById('genderTitle').innerHTML="(pria)";
+  document.getElementById('genderTitle').innerHTML=" indeks massa tubuh Anda";
   //Result message        
         if(IMTHasil > 0 && IMTHasil < 17){
             document.getElementById('means').innerHTML="Kekurangan berat badan tingkat berat" ;
@@ -58,7 +58,7 @@ if(document.getElementById('IMTmen').checked){
 }
 else if(
 document.getElementById('IMTwomen').checked){
-  document.getElementById('genderTitle').innerHTML="(wanita)";
+  document.getElementById('genderTitle').innerHTML=" indeks massa tubuh Anda";
  if(IMTHasil > 0 && IMTHasil < 17){
             document.getElementById("means").innerHTML="Kekurangan berat badan tingkat berat" ;
             $('#means, #IMTHasil').addClass('text-info');
