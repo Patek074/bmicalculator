@@ -1,5 +1,6 @@
-body, html {
-  background: linear-gradient(37deg,#80f4ff, #80ffdf, #f5baff, #f2e6ff);
+
+body {
+  background: linear-gradient(37deg,#80ffdf, #80f4ff, #6ea1ff, #f5baff, #f2e6ff, #ffbae7);
   background-size: 600% 600%;
   -webkit-animation: AnimationName 10s ease infinite;
   -moz-animation: AnimationName 10s ease infinite;
@@ -27,10 +28,12 @@ body, html {
   100%{background-position:0% 64%}
 }
 
-
-
 .space {
     line-height: 0.8em;
+}
+
+small {
+  color: #a6a6a6; !important
 }
 
 .kerning {
